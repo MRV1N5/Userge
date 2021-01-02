@@ -20,9 +20,9 @@ ALLOWED_COLLECTION = get_collection("PM_PERMIT")
 
 pmCounter: Dict[int, int] = {}
 allowAllFilter = filters.create(lambda _, __, ___: Config.ALLOW_ALL_PMS)
-noPmMessage = ("Hello {fname} this is an automated message\n"
-               "Please wait untill you get approved to direct message "
-               "And please dont spam untill then ")
+noPmMessage = ("Hello {fname} Ini adalah pesan otomatis\n"
+               "Tolong tunggu sampai pesan anda dibalas **master** saya."
+               "Tolong jangan **Spam** atau anda akan saya **blockir**")
 blocked_message = "**You were automatically blocked**"
 
 
@@ -57,10 +57,10 @@ async def allow(message: Message):
         a = await ALLOWED_COLLECTION.update_one(
             {'_id': userid}, {"$set": {'status': 'allowed'}}, upsert=True)
         if a.matched_count:
-            await message.edit("`Already approved to direct message`", del_in=3)
+            await message.edit("`Pesan sudah Diterima master`", del_in=3)
         else:
             await (await userge.get_users(userid)).unblock()
-            await message.edit("`Approved to direct message`", del_in=3)
+            await message.edit("`Pesan Diterima Oleh Master Saya`", del_in=3)
     else:
         await message.edit(
             "I need to reply to a user or provide the username/id or be in a private chat",
