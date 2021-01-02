@@ -194,7 +194,7 @@ async def sticker_pack_info_(message: Message):
         await message.edit("`I can't fetch info from nothing, can I ?!`")
         return
     if not replied.sticker:
-        await message.edit("`Reply to a sticker to get the pack details`")
+        await message.edit("`Reply ke stiker biar bisa di comot`")
         return
     await message.edit("`Fetching details of the sticker pack, please wait..`")
     get_stickerset = await message.client.send(
@@ -231,13 +231,13 @@ def resize_photo(photo: str) -> io.BytesIO:
 
 
 KANGING_STR = (
-    "Using Witchery to kang this sticker...",
-    "Plagiarising hehe...",
-    "Inviting this sticker over to my pack...",
-    "Kanging this sticker...",
-    "Hey that's a nice sticker!\nMind if I kang?!..",
-    "hehe me stel ur stikér\nhehe.",
+    "Menggunakan Sihir untuk mencuri stiker ini...",
+    "Ngopi dulu hehe...",
+    "Mengambil paksa stiker ini ke pack william",
+    "Comot tanpa ijin stiker ini...",
+    "Hey bro stikermu bagus banget!\nAku Ambil Ya..!!",
+    "haha stikerlu gua curi\nhehe.",
     "Ay look over there (☉｡☉)!→\nWhile I kang this...",
-    "Roses are red violets are blue, kanging this sticker so my pacc looks cool",
+    "Mawar itu biru Violet itu merah, kanging this sticker so my pacc looks cool",
     "Imprisoning this sticker...",
     "Mr.Steal Your Sticker is stealing this sticker... ")
